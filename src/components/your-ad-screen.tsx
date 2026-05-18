@@ -33,10 +33,30 @@ function FieldLabel({ children }: { children: React.ReactNode }) {
   return <p className="text-s1 text-foreground">{children}</p>;
 }
 
-function PhotoPlaceholder({ className }: { className?: string }) {
+const CAR_PHOTOS = [
+  "/photos/photo-1611651338412-8403fa6e3599.webp",
+  "/photos/photo-1594502184342-2e12f877aa73.webp",
+  "/photos/photo-1611651186486-415f04eb78e4.webp",
+  "/photos/photo-1614162692292-7ac56d7f7f1e.webp",
+  "/photos/photo-1634673970798-a15ae56f6c65.webp",
+  "/photos/photo-1665310392407-cb5ca9ce26e2.webp",
+] as const;
+
+function PhotoImage({
+  src,
+  alt,
+  className,
+}: {
+  src: string;
+  alt: string;
+  className?: string;
+}) {
   return (
-    <div
-      className={cn("shrink-0 rounded-md bg-[var(--light-grey)]", className)}
+    <img
+      src={src}
+      alt={alt}
+      className={cn("shrink-0 rounded-md object-cover", className)}
+      decoding="async"
     />
   );
 }
@@ -44,21 +64,25 @@ function PhotoPlaceholder({ className }: { className?: string }) {
 function PhotoGrid() {
   return (
     <div className="px-4 pb-6 pt-6">
-      <div className="flex gap-1">
-        <PhotoPlaceholder className="size-[93px]" />
-        <div className="grid grid-cols-3 gap-px">
-          {Array.from({ length: 5 }).map((_, i) => (
-            <PhotoPlaceholder key={i} className="size-[46px]" />
+      <FieldLabel>Photos</FieldLabel>
+      <div
+        className="mt-2 overflow-x-auto [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden"
+        tabIndex={0}
+        aria-label="Ad photos"
+      >
+        <div className="flex w-max gap-1">
+          {CAR_PHOTOS.map((src) => (
+            <PhotoImage key={src} src={src} alt="" className="size-[93px]" />
           ))}
-          <button
-            type="button"
-            className="flex size-[46px] items-center justify-center rounded-md bg-[var(--light-grey)] text-muted-foreground"
-            aria-label="Add photo"
-          >
-            <Plus className="size-6" strokeWidth={1.5} />
-          </button>
         </div>
       </div>
+      <button
+        type="button"
+        className="mt-2 flex h-10 w-full items-center justify-center rounded-md bg-[var(--light-grey)] text-muted-foreground"
+        aria-label="Add photo"
+      >
+        <Plus className="size-4" strokeWidth={1.5} />
+      </button>
     </div>
   );
 }
