@@ -212,11 +212,11 @@ function AddressSection() {
         <span className="text-p1 flex-1 text-foreground">Bishkek</span>
         <ChevronRight className="size-4 shrink-0 text-muted-foreground" />
       </button>
-      <div className="mt-3 overflow-hidden rounded-md border border-input">
+      <div className="mt-3 h-[200px] overflow-hidden rounded-md border border-input">
         <iframe
           title="Map preview — Bishkek"
           src="https://www.openstreetmap.org/export/embed.html?bbox=74.53%2C42.82%2C74.65%2C42.90&layer=mapnik&marker=42.87%2C74.59"
-          className="h-[100px] w-full border-0"
+          className="block h-full w-full border-0"
           loading="lazy"
         />
       </div>
@@ -227,10 +227,12 @@ function AddressSection() {
 export function YourAdScreen() {
   return (
     <div className="flex min-h-screen items-start justify-center bg-[var(--extra-light-grey)] py-6">
-      <div className="flex w-[375px] flex-col overflow-hidden rounded-lg bg-background shadow-lg">
-        <div className="flex-1 overflow-y-auto">
+      <div className="flex h-[812px] w-[375px] flex-col overflow-hidden rounded-lg bg-background shadow-lg">
+        <div className="shrink-0">
           <HeaderBar />
           <ProgressSection />
+        </div>
+        <div className="min-h-0 flex-1 overflow-y-auto">
           <div className="border-b border-[var(--grey-01)]">
             <PhotoGrid />
           </div>

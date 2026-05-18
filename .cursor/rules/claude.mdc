@@ -1,0 +1,6 @@
+---
+description: Read and follow CLAUDE.md on every project change
+alwaysApply: true
+---
+
+Before editing code or answering a request that changes this project (UI, components, layout, copy, logic, styles, or routes), read the full `CLAUDE.md` at the repository root and follow it — including the `src/components/` confirmation step when applicable.

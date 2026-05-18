@@ -1,8 +1,10 @@
 # Agent instructions: design changes
 
+**Agents: read this entire file at the start of every chat turn** before changing the project (UI, components, layout, copy, logic, styles, routes). Cursor loads it via `.cursor/rules/claude.mdc` (`alwaysApply: true`). Follow it before editing code.
+
 You change existing screens via user prompts. **Source of truth is the codebase design system** — not invented UI.
 
-For the human workflow (branch → preview → publish), see `workflow.md`.
+For the human workflow (branch → preview → publish), see [`docs/workflow.md`](./docs/workflow.md).
 
 ---
 
@@ -15,6 +17,18 @@ For the human workflow (branch → preview → publish), see `workflow.md`.
 - **Minimal diff** — only files required for the task; no drive-by refactors.
 - Match prod patterns: same tokens, behavior, and UX as adjacent screens.
 - **Code over Figma** for implementation. Figma/Code Connect is reference only.
+
+### Confirm before editing `src/components/`
+
+When the user asks for **any change** under `src/components/` (including `src/components/ui/`):
+
+1. **Stop** — do not edit those files yet.
+2. Ask: **Do you really want to change it?** Name the file(s) or component(s) you would modify.
+3. **Wait** for an explicit yes (e.g. “yes”, “go ahead”, “proceed”) before making edits.
+
+If the request only touches paths **outside** `src/components/`, proceed without this step.
+
+If the user already confirmed in the same message (e.g. “yes, update `Button` in `src/components/ui`”), skip the question and proceed.
 
 ---
 

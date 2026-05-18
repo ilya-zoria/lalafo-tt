@@ -1,6 +1,6 @@
 # Prototype workflow
 
-Build UI prototypes with AI using the design system in this repo. Agent behavior is defined in [`CLAUDE.md`](CLAUDE.md).
+Build UI prototypes with AI using the design system in this repo. Agent behavior is defined in [`CLAUDE.md`](../CLAUDE.md).
 
 ---
 
