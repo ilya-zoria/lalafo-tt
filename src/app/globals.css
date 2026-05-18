@@ -1,0 +1,182 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --font-sans: var(--font-ubuntu);
+
+  --spacing-1: 4px;
+  --spacing-2: 8px;
+  --spacing-3: 12px;
+  --spacing-4: 16px;
+  --spacing-6: 24px;
+
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-destructive: var(--destructive);
+  --color-progress: var(--progress);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 8px;
+  --radius-xl: 24px;
+
+  --text-extra-large: 40px;
+  --text-h1: 32px;
+  --text-h2: 26px;
+  --text-h3: 20px;
+  --text-h4: 18px;
+  --text-s1: 16px;
+  --text-s2: 16px;
+  --text-s3: 14px;
+  --text-s4: 14px;
+  --text-s5: 12px;
+  --text-s6: 10px;
+  --text-p1: 16px;
+  --text-p2: 14px;
+  --text-caption-1: 12px;
+  --text-caption-2: 10px;
+  --text-button-l: 16px;
+  --text-button-m: 14px;
+  --text-button-s: 12px;
+  --text-hint: 12px;
+}
+
+:root {
+  --background: #ffffff;
+  --foreground: #0a1331;
+
+  --primary: #22ca46;
+  --primary-foreground: #ffffff;
+  --primary-hover: #43d262;
+
+  --secondary: #ffffff;
+  --secondary-foreground: #22ca46;
+
+  --muted: #f0f2f7;
+  --muted-foreground: #737d9b;
+  --medium-grey: #a1a8bd;
+  --grey-01: #d9dde7;
+  --light-grey: #f0f2f7;
+  --extra-light-grey: #f7f8fb;
+
+  --destructive: #ee374f;
+  --pink: #ff2366;
+  --pink-hover: #ff447d;
+
+  --border: #d9dde7;
+  --input: #d9dde7;
+  --ring: #22ca46;
+
+  --progress: #ffc107;
+
+  --popover: #ffffff;
+  --popover-foreground: #0a1331;
+  --accent: #f7f8fb;
+  --accent-foreground: #0a1331;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background font-sans text-foreground antialiased;
+  }
+}
+
+@layer utilities {
+  .text-extra-large {
+    font-size: var(--text-extra-large);
+    font-weight: 700;
+    line-height: normal;
+    letter-spacing: 0.26px;
+  }
+
+  .text-h1 {
+    font-size: var(--text-h1);
+    font-weight: 700;
+    line-height: 150%;
+    letter-spacing: 0.26px;
+  }
+
+  .text-h2 {
+    font-size: var(--text-h2);
+    font-weight: 700;
+    line-height: 150%;
+  }
+
+  .text-h3 {
+    font-size: var(--text-h3);
+    font-weight: 700;
+    line-height: 150%;
+  }
+
+  .text-h4 {
+    font-size: var(--text-h4);
+    font-weight: 700;
+    line-height: 150%;
+  }
+
+  .text-s1 {
+    font-size: var(--text-s1);
+    font-weight: 700;
+    line-height: 150%;
+  }
+
+  .text-s2 {
+    font-size: var(--text-s2);
+    font-weight: 500;
+    line-height: 150%;
+  }
+
+  .text-s3 {
+    font-size: var(--text-s3);
+    font-weight: 700;
+    line-height: 150%;
+  }
+
+  .text-s4 {
+    font-size: var(--text-s4);
+    font-weight: 500;
+    line-height: 150%;
+  }
+
+  .text-p1 {
+    font-size: var(--text-p1);
+    font-weight: 400;
+    line-height: 150%;
+  }
+
+  .text-p2 {
+    font-size: var(--text-p2);
+    font-weight: 400;
+    line-height: 150%;
+  }
+
+  .text-caption-1 {
+    font-size: var(--text-caption-1);
+    font-weight: 400;
+    line-height: 150%;
+  }
+
+  .text-button-l {
+    font-size: var(--text-button-l);
+    font-weight: 500;
+    line-height: 150%;
+  }
+}
