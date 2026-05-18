@@ -202,7 +202,7 @@ function PhoneSection() {
 
 function AddressSection() {
   return (
-    <section className="px-4 pb-4">
+    <section className="px-4 pt-4 pb-4">
       <FieldLabel>Address</FieldLabel>
       <button
         type="button"
