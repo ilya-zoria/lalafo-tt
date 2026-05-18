@@ -19,28 +19,36 @@ Open [http://localhost:3000](http://localhost:3000) — the screen is rendered a
 
 ### Test the workflow with Cursor Agent
 
-Use **Cursor Agent** to iterate on this prototype the same way you would in production design work: describe a change in chat, let the agent edit the screen using [`CLAUDE.md`](./CLAUDE.md) and the design system, then verify in the **browser preview** before you commit.
+Use **Cursor Agent** to iterate on this prototype the same way you would in production design work: describe a change in chat, let the agent edit the screen using `[CLAUDE.md](./CLAUDE.md)` and the design system, then verify in the **browser preview** before you commit.
 
 1. Start `npm run dev` and open the app preview in Cursor.
 2. Prompt the agent with a specific screen + change (see [Example AI prompt](#example-ai-prompt) below).
 3. Review the agent summary and check layout in the Cursor browser.
-4. Follow [`docs/workflow.md`](./docs/workflow.md) when you are ready to branch, commit, and share.
+4. Follow `[docs/workflow.md](./docs/workflow.md)` when you are ready to branch, commit, and share.
 
 Agent features in Cursor 3 (planning, browser testing, parallel agents) are a good fit for this loop. Learn more in the [Cursor 3.0 changelog](https://cursor.com/changelog/3-0).
+
+### Example AI prompt
+
+```text
+Add Email section below phone number section
+```
+
+The agent should edit only what’s needed, use existing tokens/components, and reply with a short summary plus how to verify in the browser preview.
 
 ---
 
 ## Project layout
 
 
-| Path                                | Purpose                                           |
-| ----------------------------------- | ------------------------------------------------- |
-| `src/app/`                          | Next.js app router (`page.tsx`, global styles)    |
-| `src/components/your-ad-screen.tsx` | Main screen composition                           |
-| `src/components/ui/`                | UI components (Button, Input, Select, etc.)       |
-| `CLAUDE.md`                         | Agent instructions for AI-assisted design changes |
+| Path                                | Purpose                                                    |
+| ----------------------------------- | ---------------------------------------------------------- |
+| `src/app/`                          | Next.js app router (`page.tsx`, global styles)             |
+| `src/components/your-ad-screen.tsx` | Main screen composition                                    |
+| `src/components/ui/`                | UI components (Button, Input, Select, etc.)                |
+| `CLAUDE.md`                         | Agent instructions for AI-assisted design changes          |
 | `.cursor/rules/claude.mdc`          | Cursor rule — enforces reading `CLAUDE.md` on every change |
-| `docs/workflow.md`                  | Human workflow for building prototypes with AI    |
+| `docs/workflow.md`                  | Human workflow for building prototypes with AI             |
 
 
 ---
@@ -72,11 +80,11 @@ Source of truth for **how the AI should change UI** in this repo:
 
 When you prompt the agent (e.g. *“Add Email section below phone number section”*), it should follow these rules.
 
-### [`.cursor/rules/claude.mdc`](./.cursor/rules/claude.mdc) — Cursor rule
+### `[.cursor/rules/claude.mdc](./.cursor/rules/claude.mdc)` — Cursor rule
 
 An **always-on** Cursor rule (`alwaysApply: true`) that tells the agent to read and follow `CLAUDE.md` before any project change (UI, components, layout, copy, logic, styles, or routes).
 
-Use this so agent behavior stays aligned with `CLAUDE.md` even when the file is not @-mentioned in chat. The rule content is short; **`CLAUDE.md` remains the source of truth** for detailed instructions.
+Use this so agent behavior stays aligned with `CLAUDE.md` even when the file is not @-mentioned in chat. The rule content is short; `**CLAUDE.md` remains the source of truth** for detailed instructions.
 
 ### `[docs/workflow.md](./docs/workflow.md)` — human workflow
 
@@ -98,16 +106,6 @@ Includes prompt examples and what to expect from the agent (DS-only changes, app
 ## Design reference
 
 - **Screen:** “Your ad” posting flow
-- **Font:** Ubuntu (Google Fonts)
-- **Icons:** [Lucide](https://lucide.dev/icons/)
-- **Colors & type:** CSS variables in `src/app/globals.css` (primary green `#22CA46`, neutral palette, typescale utilities)
+- **Font:** Ubuntu
+- **Colors & type:** CSS variables in `src/app/globals.css`
 
----
-
-## Example AI prompt
-
-```text
-Add Email section below phone number section
-```
-
-The agent should edit only what’s needed, use existing tokens/components, and reply with a short summary plus how to verify in the browser preview.
