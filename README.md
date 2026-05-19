@@ -2,7 +2,8 @@
 
 Next.js prototype of the **Your ad** mobile screen (375px), built with React, TypeScript, Tailwind CSS, and [shadcn/ui](https://ui.shadcn.com) components styled to match the Lalafo design system.
 
-Repository: [https://github.com/ilya-zoria/lalafo-tt](https://github.com/ilya-zoria/lalafo-tt)
+Repository: [https://github.com/ilya-zoria/lalafo-tt](https://github.com/ilya-zoria/lalafo-tt)  
+Prototype: [https://lalafo-tt.vercel.app/](https://lalafo-tt.vercel.app/)
 
 ---
 
